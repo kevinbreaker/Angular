@@ -10,8 +10,10 @@ export class DataBindingComponent implements OnInit {
   url:string = 'kevinbreaker.github.io';
   Angular:boolean = true;
   urlImage:string = 'http://lorempixel.com/400/200/transport/';
+  
   newValueKeyPress = '';
   savedValuePress = '';
+
   isMouseOver:boolean = false;
 
   getVal():number{
@@ -38,6 +40,7 @@ export class DataBindingComponent implements OnInit {
     this.isMouseOver = !this.isMouseOver;
   }
 
+  
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,22 @@
+<section class="two-way-binding">
+    <article>
+      <div>
+        <h3>Two way data-binding</h3>
+  
+        <input type="text" [value]="name" (input)="name = $event.target.value">
+        <p>You digited: {{ name }}</p>
+  
+        <input type="text" [ngModel]="name" (ngModelChange)="name = $event">
+        <p>You digited: {{ name }}</p>
+  
+        <input type="text" [(ngModel)]="name">
+        <p>You digited: {{ name }}</p>
+      </div>
+      <div>
+        <p>My name is {{ person.name }} and I'm {{ person.age }} years old.</p>
+        <input type="text" [(ngModel)]="person.name">
+        <input type="text" [(ngModel)]="person.age">
+      </div>
+      <br><br><br><br>    
+    </article>
+  </section>
