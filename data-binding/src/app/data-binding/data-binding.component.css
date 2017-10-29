@@ -1,0 +1,18 @@
+.interpolation{
+    background: #ccc;
+}
+.property-binding{
+    background: #5a5454;
+    color: lightgrey;
+}
+#color{
+    color: #000;
+}
+.event-binding{
+    background: #647881;
+}
+
+.highlight{
+    background: yellow;
+    font-weight: bold;
+}

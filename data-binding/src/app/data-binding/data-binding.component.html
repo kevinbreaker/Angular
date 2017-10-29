@@ -1,0 +1,58 @@
+<section class="interpolation">
+  <article>
+    <h3>Interpolation</h3>
+
+    <P>String rederization with Interpolation: {{ url }}</P>
+    <p>Result of 5 + 7: {{ 5 + 7 }}</p>
+    <p>Result of 5 + 10 not it: {{ 5 + 10 + getVal() }} </p>
+    <p>Knowledge in Angular: {{ Angular && getKnowledge() }}</p>
+    <img src="{{ urlImage }}">
+    <div role="alert" class="alert {{ classHere.value }}">
+        the text color changes with the selected value.
+    </div>
+  <hr>
+  </article>
+</section>
+<section class="property-binding">
+  <article>
+    <h3>property-binding</h3>
+
+    <img [src]="urlImage">
+    <img bind-src="urlImage">
+  </article>
+
+  <article>
+    <h3>Class and style binding</h3>
+    <div>
+        Select a class:
+        <select id="color" #classHere (change)="0">
+          <option value="alert-success">Success</option>
+          <option value="alert-info">Info</option>
+          <option value="alert-warning">Warning</option>
+          <option value="alert-danger">Error</option>          
+        </select>
+        <br><br><hr>
+         
+        <div role="alert" class="alert" [class.alert-success]="classHere.value == 'alert-success'">Success</div>
+        <div role="alert" class="alert" [class.alert-info]="classHere.value == 'alert-info'">Info</div>
+        <div role="alert" class="alert" [class.alert-warning]="classHere.value == 'alert-warning'">Warning</div>
+        <div role="alert" class="alert alert-danger" [style.display]="classHere.value == 'alert-danger' ? 'block' : 'none'">Error</div>        
+    </div>
+  </article>
+</section>
+<section class="event-binding">
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button (click)="clickedBtn()" class="btn btn-primary">Click me!</button>
+      <br><br>
+      <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="saveValue($event.target.value)" (blur)="saveValue(inputHere.value)" #inputHere/>
+
+      <p>Value above with interpolation: {{ newValueKeyPress }}</p>
+      <br><p>Save value with interpolation: {{ savedValuePress }}</p>
+      <br>
+      <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver == true">Hover the mouse over me</span>
+      <br><br><br><br>
+    </div>
+  </article>
+</section>
