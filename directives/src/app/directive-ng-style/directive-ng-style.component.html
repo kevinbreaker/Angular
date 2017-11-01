@@ -1,0 +1,20 @@
+<h5>Styles with property binding (style binding)</h5>
+<button
+  [style.background]="active ? 'blue' : 'gray' "
+  [style.color]="active ? 'white' : 'black' "
+  [style.fontWeight]="active ? 'bold' : 'normal' "
+  [style.fontSize]="fontValue + 'px'"
+  (click)="toChange()"
+>Changing the active attribute </button>
+<input type="text" [(ngModel)]="fontValue">
+
+<h5>Styles with ngStyle</h5>
+<button
+  [ngStyle]="{
+    'background': (active ? 'blue' : 'gray'),
+    'color': (active ? 'white' : 'black'),
+    'fontWeight': (active ? 'bold' : 'normal'),
+    'fontSize': fontValue + 'px'
+  }"
+  (click)="toChange()"
+>Changing the active attribute </button>

@@ -1,0 +1,27 @@
+<h5>Directive *ngFor</h5>
+
+<ul>
+  <li *ngFor="let knowledge of knowledges">
+    {{ knowledge }}
+  </li>
+  <hr>
+  <li *ngFor="let knowledge of knowledges, let i = index">
+    {{ i + 1 }} - {{ knowledge }}
+  </li>
+</ul>
+<br><br><br><hr>
+<h5>Removing * and using template</h5>
+
+
+
+  <ul>
+    <li template="ngFor let knowledge of knowledges, let i = index">
+      {{ knowledge }}
+    </li>
+    <hr>
+    <template ngFor [ngForOf]="knowledges" let-knowledge let-i="index">
+        <li>
+            {{ i + 1 }} - {{ knowledge }}
+        </li>
+    </template>
+  </ul>

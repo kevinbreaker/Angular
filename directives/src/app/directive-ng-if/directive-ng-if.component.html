@@ -1,0 +1,33 @@
+<h5>*ngIf</h5>
+
+<div *ngIf="showKnowledge">
+  List of knowledge here.
+</div>
+
+<div *ngIf="!showKnowledge">
+    The list of knowledge is empty.
+</div>
+
+<div *ngIf="knowledge.length > 0">
+  List of knowledge here.
+</div>
+
+<div *ngIf="knowledge.length == 0">
+    The list of knowledge is empty.
+</div>
+<br>
+<button (click)="onShowKnowledge()">Toggle knowledge</button>
+<br><br><br><hr>
+<h5>Removing * and using template</h5>
+
+
+
+<template [ngIf]="showKnowledge">
+  <div>
+      List of knowledge here.
+  </div>
+</template>
+
+<div template="ngIf showKnowledge">
+    List of knowledge here.
+</div>
