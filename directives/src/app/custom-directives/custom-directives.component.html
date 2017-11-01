@@ -1,0 +1,26 @@
+<p backgroundYellow>
+  Text with yellow background
+</p>
+
+<button backgroundYellow>Button with yellow background</button>
+
+<p highlightMouse>
+  Text with highlight when hover mouse here.
+</p>
+
+<p [highlight]=" 'red' " [defaultColor]=" 'grey' " >
+    Text with highlight with custom colors.
+  </p>
+
+  <h5>*ngElse</h5>
+  
+  <div *ngIf="showKnowledge">
+    List of knowledge here.
+  </div>
+  
+  <div *ngElse="showKnowledge">
+      The list of knowledge is empty.
+  </div>
+  
+  <br>
+  <button (click)="onShowKnowledge()">Toggle knowledge</button>

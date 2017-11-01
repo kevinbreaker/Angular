@@ -8,6 +8,13 @@ import { DirectiveNgSwitchComponent } from './directive-ng-switch/directive-ng-s
 import { DirectiveNgForComponent } from './directive-ng-for/directive-ng-for.component';
 import { DirectiveNgClassComponent } from './directive-ng-class/directive-ng-class.component';
 import { DirectiveNgStyleComponent } from './directive-ng-style/directive-ng-style.component';
+import { OperatorElvisComponent } from './operator-elvis/operator-elvis.component';
+import { ExampleNgContentComponent } from './example-ng-content/example-ng-content.component';
+import { BackgroundYellowDirective } from './shared/background-yellow.directive';
+import { CustomDirectivesComponent } from './custom-directives/custom-directives.component';
+import { HighlightMouseDirective } from './shared/highlight-mouse.directive';
+import { HighlightDirective } from './shared/highlight.directive';
+import { DirectiveNgElseDirective } from './shared/directive-ng-else.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +24,13 @@ import { DirectiveNgStyleComponent } from './directive-ng-style/directive-ng-sty
     DirectiveNgForComponent,
     DirectiveNgClassComponent,
     DirectiveNgStyleComponent,
+    OperatorElvisComponent,
+    ExampleNgContentComponent,
+    BackgroundYellowDirective,
+    CustomDirectivesComponent,
+    HighlightMouseDirective,
+    HighlightDirective,
+    DirectiveNgElseDirective,
   ],
   imports: [
     BrowserModule,

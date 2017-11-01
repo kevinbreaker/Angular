@@ -1,0 +1,8 @@
+<p> Description: {{ task.desc }}</p>
+<!-- <p> Responsible: {{ task.responsible.name }}</p> -->
+
+<p> Responsible: {{ task.responsible != null ? task.responsible: 'Kevin' }}</p>
+<hr><h4>elvis</h4>
+<p> Responsible: {{ task.responsible?.name }}</p>
+
+<p> User: {{ task.user?.id?.num }}</p>
