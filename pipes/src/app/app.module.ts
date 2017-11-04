@@ -1,20 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ExamplesPipesComponent } from './examples-pipes/examples-pipes.component';
 import { SettingsService } from './settings.service';
 import { CamelCasePipe } from './camel-case.pipe';
+import { ImpureFilterArrayPipe } from './impure-filter-array.pipe';
+import { FilterArrayPipe } from './filter-array.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ExamplesPipesComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    ImpureFilterArrayPipe,
+    FilterArrayPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     // {
@@ -25,7 +31,7 @@ import { CamelCasePipe } from './camel-case.pipe';
     {
       provide: LOCALE_ID,
       deps: [SettingsService],
-      useFactory: setting => setting.getLocale()
+      useFactory: function (setting) {  setting.getLocale()}
     }
   ],
   bootstrap: [AppComponent]

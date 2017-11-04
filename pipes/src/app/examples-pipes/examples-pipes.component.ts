@@ -1,4 +1,7 @@
+import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+
 
 @Component({
   selector: 'app-examples-pipes',
@@ -17,6 +20,33 @@ export class ExamplesPipesComponent implements OnInit {
   };
   
   books: string[] = ['Angular', 'NodeJs', 'MongoDb'];
+
+  filter: string;
+
+  addBook(valor){
+    this.books.push(valor);
+    console.log(this.books);
+  }
+
+  getBooks(){
+    if(this.books.length === 0 || this.filter === undefined || this.filter.trim() === ''){
+      return this.books;
+    }
+    return this.books.filter( v => {
+
+    if( v.toLocaleLowerCase().indexOf(this.filter.toLocaleLowerCase()) >= 0 ){
+      return true;
+    }
+      return false;
+    });
+  }
+  //with promise
+  asyncValuePr = new Promise((resolve, reject) => {  
+    setTimeout(() => resolve('Async value with Promise'),2000)
+  });
+  
+  //with observable
+  asyncValueOb = Observable.interval(2000).map( (value) => 'Async value with Observable');
 
   constructor() { }
 
