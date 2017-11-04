@@ -1,0 +1,12 @@
+<h4>sharing a service between two components</h4>
+
+<input type="text" #skillInput >
+<button (click)="onAddSkill(skillInput.value)">Add skill</button>
+
+<ol>
+  <li *ngFor="let oi of knowledges">
+    {{oi}}
+  </li>
+</ol>
+
+<app-get-skill-created></app-get-skill-created>

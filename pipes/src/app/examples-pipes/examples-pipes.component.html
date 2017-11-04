@@ -1,0 +1,16 @@
+<h3>Examples pipes</h3>
+
+<p>Title: {{ book.title | uppercase | camelCase }}</p>
+<p>Rating: {{ book.rating | number:'1.1-2' }}</p>
+<p>Pages: {{ book.pages | number }}</p>
+<p>Price: {{ book.price | currency:'USD':'true' }}</p>
+<p>Date release: {{ book.release | date }}</p>
+<p>Url: {{ book.url }}</p>
+<br>
+<p>Book: {{ book | json }}</p>
+<br> 
+ <ul>
+  <li *ngFor="let bk of books">
+    {{ bk }}
+  </li>
+</ul>
