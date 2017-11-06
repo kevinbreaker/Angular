@@ -6,11 +6,11 @@ export class SettingsService {
   constructor() { }
 
   getLocale(){
-    let idioma = navigator.language;
+    let language = navigator.language;
     console.log('====================================');
-    console.log(idioma);
+    console.log(language);
     console.log('====================================');
-    return idioma;
+    return language;
   }
 
 }

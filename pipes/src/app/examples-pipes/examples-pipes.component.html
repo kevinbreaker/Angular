@@ -9,8 +9,37 @@
 <br>
 <p>Book: {{ book | json }}</p>
 <br> 
+
+<input type="text" [(ngModel)]="filter">
+<br>
+
+<br>
+<input type="text" #newValue>
+<button (click)="addBook(newValue.value)">Add book</button>
+
+<!-- Only test and examples (but don't use it) -->
+<h3>pure pipe</h3>
+
  <ul>
-  <li *ngFor="let bk of books">
+  <li *ngFor="let bk of books | filterArray:filter">
     {{ bk }}
   </li>
 </ul>
+
+<h3>Impure pipe</h3>
+
+<ul>
+    <li *ngFor="let bk of books | impureFilterArray:filter">
+      {{ bk }}
+    </li>
+  </ul>
+<!-- end test -->
+<h3>the use correctly pipes</h3>
+
+  <ul>
+      <li *ngFor="let bk of getBooks() | impureFilterArray:filter">
+        {{ bk }}
+      </li>
+    </ul>
+    <p>{{ asyncValuePr | async }}</p>
+    <p>{{ asyncValueOb | async }}</p>
